@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\BBSforum\\forum\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\forum.bundle.scp.css",
+      "PackagePath": "staticwebassets\\forum.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\BBSforum\\forum\\wwwroot\\css\\js\\site.js",
+      "PackagePath": "staticwebassets\\css\\js\\site.js"
+    },
+    {
+      "Id": "E:\\BBSforum\\forum\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.forum.props",
+      "PackagePath": "build\\forum.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.forum.props",
+      "PackagePath": "buildMultiTargeting\\forum.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.forum.props",
+      "PackagePath": "buildTransitive\\forum.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.forum.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
