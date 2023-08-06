@@ -1,7 +1,5 @@
-﻿// // See https://aka.ms/new-console-template for more information
-// Console.WriteLine("Hello, World!");
-using Forum.Data;
-using Microsoft .EntityFrameworkCore;
+﻿using Forum.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 

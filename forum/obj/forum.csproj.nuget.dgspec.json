@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "e:\\BBSforum\\forum\\forum.csproj": {}
+    "E:\\BBSforum\\forum\\forum.csproj": {}
   },
   "projects": {
-    "e:\\BBSforum\\forum\\forum.csproj": {
+    "E:\\BBSforum\\forum\\forum.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\BBSforum\\forum\\forum.csproj",
+        "projectUniqueName": "E:\\BBSforum\\forum\\forum.csproj",
         "projectName": "forum",
-        "projectPath": "e:\\BBSforum\\forum\\forum.csproj",
+        "projectPath": "E:\\BBSforum\\forum\\forum.csproj",
         "packagesPath": "C:\\Users\\123\\.nuget\\packages\\",
-        "outputPath": "e:\\BBSforum\\forum\\obj\\",
+        "outputPath": "E:\\BBSforum\\forum\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\123\\AppData\\Roaming\\NuGet\\NuGet.Config",
