@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r/EgugKJO4O9gxusieKr9K1LyrrnhDDb2SnWKMZsiUBAYsgAYP8lkn705SBNe8yEf7lKwLrPScJuWvL0XpeZsA==",
+  "dgSpecHash": "HR1Wa2WHa9Pbc5SAQiI/FnQNSixTSQfPRbA0BssIIuNB8iaqWFXP+rCTaRSKxtwo+6rvF9A3C3AiNm3WNTfKVg==",
   "success": true,
-  "projectFilePath": "E:\\BBSforum\\forum\\forum.csproj",
+  "projectFilePath": "d:\\BBSforum\\forum\\forum.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\123\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\123\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

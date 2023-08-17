@@ -7,5 +7,6 @@
             "database": "${workspaceFolder:BBSforum}/forum/Forum.Data.db",
             "name": "DbSet"
         }
-    ]
+    ],
+    "dotnet.defaultSolution": "forum/forum.sln"
 }
