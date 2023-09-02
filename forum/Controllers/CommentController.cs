@@ -27,7 +27,7 @@ namespace forum.Controllers
                           Problem("Entity set 'ForumDbContext.Comment'  is null.");
         }
 
-                // GET: Comment/Details/5
+        // GET: Comment/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Comment == null)
@@ -45,15 +45,14 @@ namespace forum.Controllers
             return View(comment);
         }
 
-                // GET: Comment/Create
+        // GET: Comment/Create
         public IActionResult Create()
         {
             return View();
         }
 
-                // POST: Comment/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Comment/Create
+        // To protect from overposting attacks
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,userId,postId,content,createdAt")] Comment comment)
@@ -83,9 +82,8 @@ namespace forum.Controllers
             return View(comment);
         }
 
-
-                // POST: Comment/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to. Details: http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Comment/Edit/5
+        // To protect from overposting attacks
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,userId,postId,content,createdAt")] Comment comment)
@@ -118,7 +116,7 @@ namespace forum.Controllers
             return View(comment);
         }
 
-                // GET: Comment/Delete/5
+        // GET: Comment/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Comment == null)
@@ -136,7 +134,7 @@ namespace forum.Controllers
             return View(comment);
         }
 
-                // POST: Comment/Delete/5
+        // POST: Comment/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

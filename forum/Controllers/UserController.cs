@@ -52,8 +52,7 @@ namespace forum.Controllers
         }
 
         // POST: User/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-
+        // To protect from overposting attacks
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,name,lastName,email,passwordHash,token,role")] User user)
@@ -84,8 +83,7 @@ namespace forum.Controllers
         }
 
         // POST: User/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-
+        // To protect from overposting attacks
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,name,lastName,email,passwordHash,token,role")] User user)

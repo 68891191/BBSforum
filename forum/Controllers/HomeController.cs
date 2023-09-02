@@ -15,13 +15,12 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        if (HttpContext.Session.GetString("email") == null)
+        {
+            return View();
+        }
+        return View("IndexLoggedIn");
     }
-
-    // public IActionResult Privacy()
-    // {
-    //     return View();
-    // }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

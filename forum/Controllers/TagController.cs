@@ -52,7 +52,7 @@ namespace forum.Controllers
         }
 
         // POST: Tag/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // To protect from overposting attacks
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,name")] Tag tag)
@@ -83,7 +83,7 @@ namespace forum.Controllers
         }
 
         // POST: Tag/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // To protect from overposting attacks
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,name")] Tag tag)
