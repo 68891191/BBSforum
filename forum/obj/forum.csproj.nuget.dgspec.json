@@ -48,10 +48,6 @@
               "target": "Package",
               "version": "[2.7.0, )"
             },
-            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
-              "target": "Package",
-              "version": "[7.0.5, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.0-preview.4.23259.3, )"
@@ -59,10 +55,6 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.0-preview.4.23259.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
               "version": "[8.0.0-preview.4.23259.3, )"
             },
@@ -78,11 +70,11 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.0-preview.4.23259.3, )"
+              "version": "[7.0.5, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[8.0.0-preview.4.23261.6, )"
+              "version": "[7.0.6, )"
             }
           },
           "imports": [
