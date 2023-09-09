@@ -1,0 +1,35 @@
+@model IEnumerable<Forum.Models.User>
+
+@{
+    ViewData["Title"] = "Your profile";
+}
+<center>
+    <h1>Your profile</h1>
+    <h2>@ViewBag.user.email</h2>
+    <ul style="list-style-type: none; margin-left: 35%; margin-right: 35%;">
+        <li style="background-color: #92de11; border-radius: 15px; margin-top: 10px; height: 50px;">
+            <div>
+                <strong>email: </strong>@ViewBag.user.email
+            </div>
+        </li>
+        <li style="background-color: #92de11; border-radius: 15px; margin-top: 10px; height: 50px;">
+            <strong>first name: </strong>@ViewBag.user.name
+        </li>
+        <li style="background-color: #92de11; border-radius: 15px; margin-top: 10px; height: 50px;">
+            <strong>last name: </strong>@ViewBag.user.lastName
+        </li>
+        <li style="margin-top: 10px;">
+            <button onclick="window.location.href='/Auth/ChangePassword'" style="background-color: #de881c; border-radius: 10px;">&nbsp Change password &nbsp</button>
+        </li>
+        <li style="margin-top: 10px;">
+            <button style="background-color: #de881c; border-radius: 10px;">
+                <a href="../../User/Edit/@ViewBag.user.id" style="text-decoration: none; color: black;">&nbsp Edit profile &nbsp</a>
+            </button>
+        </li>
+        <li style="margin-top: 10px;">
+            <button style="background-color: #de881c; border-radius: 10px;">
+                <a style="text-decoration: none; color: black;" asp-controller="Home" asp-action="Index">&nbsp Back to home &nbsp</a>
+            </button>
+        </li>
+    </ul>
+    </center>

@@ -1,4 +1,4 @@
-﻿using Forum.Data;
+using Forum.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
@@ -12,7 +12,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ForumDbContext>(options =>
-options.UseSqlite(builder.Configuration.GetConnectionString("ForumDbContext") ?? throw new InvalidOperationException("Connection string 'ForumDbContext' not found.")));
+    {
+        options.UseSqlite(builder.Configuration.GetConnectionString("ForumDbContext") ?? throw new InvalidOperationException("Connection string 'ForumDbContext' not found."));
+        options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+    });
 
 builder.Services.AddSession(options =>
 {
@@ -29,7 +32,7 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default time is 30 days.
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -45,7 +48,7 @@ app.UseSession();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-    
+
 app.MapDefaultControllerRoute();
 
 app.Run();
