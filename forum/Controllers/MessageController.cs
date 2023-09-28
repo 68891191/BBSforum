@@ -22,23 +22,29 @@ namespace forum.Controllers
         // GET: Message
         public async Task<IActionResult> Index()
         {
-            if (HttpContext.Session.GetInt32("token") == null)
-            {
-                return RedirectToAction("SignIn", "Auth");
-            }
-
-            var user = await _context.User.FirstOrDefaultAsync(u => u.token == HttpContext.Session.GetString("token"));
-
-            if (user == null)
-            {
-                return Problem("User does not exist.");
-            }
-
-            var sentMessages = _context.Message.Where(m => m.senderEmail == user.email).ToList().OrderByDescending(m => m.createdAt);
-            var recievedMessages = _context.Message.Where(m => m.receiverEmail == user.email).ToList().OrderByDescending(m => m.createdAt);
+            var sentMessages = _context.Message.Where(m => m.senderEmail == HttpContext.Session.GetString("email")).ToList();
+            var recievedMessages = _context.Message.Where(m => m.receiverEmail == HttpContext.Session.GetString("email")).ToList();
             ViewBag.sentMessages = sentMessages;
             ViewBag.recievedMessages = recievedMessages;
             return _context.Message != null ? View() : Problem("Entity set 'ForumDbContext.Message'  is null.");
+        }
+
+        // GET: Message/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null || _context.Message == null)
+            {
+                return NotFound();
+            }
+
+            var message = await _context.Message
+                .FirstOrDefaultAsync(m => m.id == id);
+            if (message == null)
+            {
+                return NotFound();
+            }
+
+            return View(message);
         }
 
         // GET: Message/Create
@@ -54,21 +60,7 @@ namespace forum.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,senderEmail,receiverEmail,content")] Message message)
         {
-            string? token = HttpContext.Session.GetString("token");
-            if (token == null)
-            {
-                return RedirectToAction("SignIn", "Auth");
-            }
-
-            var user = _context.User.FirstOrDefault(u => u.token == token);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            message.senderEmail = user.email;
-
+            message.senderEmail = HttpContext.Session.GetString("email");
             if (message.senderEmail != "" && message.receiverEmail != "")
             {
                 _context.Add(message);
@@ -78,9 +70,97 @@ namespace forum.Controllers
             return View(message);
         }
 
+        // GET: Message/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null || _context.Message == null)
+            {
+                return NotFound();
+            }
+
+            var message = await _context.Message.FindAsync(id);
+            if (message == null)
+            {
+                return NotFound();
+            }
+            return View(message);
+        }
+
+        // POST: Message/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("id,senderId,receiverId,content")] Message message)
+        {
+            if (id != message.id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(message);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!MessageExists(message.id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(message);
+        }
+
+        // GET: Message/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null || _context.Message == null)
+            {
+                return NotFound();
+            }
+
+            var message = await _context.Message
+                .FirstOrDefaultAsync(m => m.id == id);
+            if (message == null)
+            {
+                return NotFound();
+            }
+
+            return View(message);
+        }
+
+        // POST: Message/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            if (_context.Message == null)
+            {
+                return Problem("Entity set 'ForumDbContext.Message'  is null.");
+            }
+            var message = await _context.Message.FindAsync(id);
+            if (message != null)
+            {
+                _context.Message.Remove(message);
+            }
+            
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
         private bool MessageExists(int id)
         {
-            return (_context.Message?.Any(e => e.id == id)).GetValueOrDefault();
+          return (_context.Message?.Any(e => e.id == id)).GetValueOrDefault();
         }
     }
 }

@@ -16,20 +16,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = d:\BBSforum\forum
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/BBSforum/forum/Views/Admin/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [d:/BBSforum/forum/Views/Auth/AccountCreated.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxBY2NvdW50Q3JlYXRlZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[d:/BBSforum/forum/Views/Auth/ChangePassword.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[d:/BBSforum/forum/Views/Auth/PasswordChanged.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxQYXNzd29yZENoYW5nZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [d:/BBSforum/forum/Views/Auth/SignIn.cshtml]
@@ -60,10 +48,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/BBSforum/forum/Views/Comment/PostComments.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxQb3N0Q29tbWVudHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [d:/BBSforum/forum/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -74,10 +58,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [d:/BBSforum/forum/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[d:/BBSforum/forum/Views/Home/Search.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [d:/BBSforum/forum/Views/Message/Create.cshtml]
