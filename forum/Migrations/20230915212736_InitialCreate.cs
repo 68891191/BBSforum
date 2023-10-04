@@ -9,6 +9,7 @@ namespace forum.Migrations
     public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
+        ///Represents the initial database migration for creating tables.
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(

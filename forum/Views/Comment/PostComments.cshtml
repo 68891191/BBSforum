@@ -1,0 +1,54 @@
+<center>
+    <div style="border-radius: 15px; background-color: #92de11; margin-top: 50px; margin-left: 15%; margin-right: 15%;">
+        <!-- Header section for displaying post information -->
+        <div style="margin: 20px;">
+            <div style="display: inline-block; margin-left: 20px; margin-top: 20px;">
+                <!-- Display the user who created the post -->
+                <b>User: </b>@ViewBag.post.userId
+            </div>
+            <div style="display: inline-block; margin-left: 20px;">
+                <!-- Display the creation date of the post -->
+                <b>Date: </b>@ViewBag.post.createdAt
+            </div>
+            <div style="display: inline-block; margin-left: 20px;">
+                <!-- Placeholder for displaying tags (not implemented in this code) -->
+                <b>Tag: </b>
+            </div>
+            <div style="margin-top: 20px;">
+                <!-- Display the title of the post -->
+                <strong>@ViewBag.post.title</strong>
+            </div>
+            <div style="margin-bottom: 40px;">
+                <!-- Display the content of the post -->
+                @ViewBag.post.content
+            </div>
+        </div>
+    </div>
+    <button style="margin-bottom: 20px; border-radius: 10px; background-color: #dedc3a">
+        <a style="text-decoration: none; color: black;" asp-controller="Comment" asp-action="Create" asp-route-id="@ViewBag.post.id">Add comment</a> 
+    </button> &nbsp
+    <button style="background-color: #de881c; border-radius: 10px;">
+        <a style="text-decoration: none; color: black;" asp-controller="Home" asp-action="Index">&nbsp Back to home &nbsp</a>
+    </button>
+    <ul style="list-style-type: none;">
+
+    <!-- Loop through each comment in ViewBag.comments -->
+    @foreach (var comment in ViewBag.comments)
+    {
+        <div style="border-radius: 15px; background-color: #f9cd25; margin-left: 25%; margin-right: 25%;">
+            <div style="margin: 20px;">
+                <div style="display: inline-block; margin-left: 20px; margin-top: 20px;">
+                    
+                    <b>User: </b>@comment.userId
+                </div>
+                <div style="display: inline-block; margin-left: 20px;">
+                    <b>Date: </b>@comment.createdAt
+                </div>
+                <div style="margin-bottom: 40px;">
+                    @comment.content
+                </div>
+            </div>
+        </div>    
+    }
+    </ul>
+</center>

@@ -16,6 +16,7 @@
 
 <script>
 function validateForm(){
+    // JavaScript function to validate user input before submission
     var firstName = document.getElementById("firstNameInput").value;
     var lastName = document.getElementById("lastNameInput").value;
     var email = document.getElementById("emailInput").value;
@@ -34,8 +35,8 @@ function validateForm(){
         alert('Incorrect email addresss');   
         return false;
     }
-    if (password.length < 8){
-        alert('Password must be at least 8 characters length');    
+    if (password.length < 6){
+        alert('Password must be at least 6 characters long');    
         return false;
     }
     if (password !== confirmPassword){

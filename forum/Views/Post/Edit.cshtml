@@ -4,6 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
+<!-- Heading for the edit page -->
 <h1>Edit</h1>
 
 <h4>Post</h4>
@@ -12,6 +13,7 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- Hidden input field for the post ID -->
             <input type="hidden" asp-for="id" />
             <div class="form-group">
                 <label asp-for="userId" class="control-label"></label>
@@ -41,6 +43,7 @@
 </div>
 
 <div>
+    <!-- Link to navigate back to the list of posts -->
     <a asp-action="Index">Back to List</a>
 </div>
 

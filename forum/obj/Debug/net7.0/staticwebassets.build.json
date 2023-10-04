@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YLpdZATjlSAj9ur5dUdGnbsQCQZwxKVl2OXoS/tqUjM=",
+  "Hash": "Qn5bXlmmMhCV355tUp6p7LxjoKUEI47vSTRR9rkctLA=",
   "Source": "forum",
   "BasePath": "_content/forum",
   "Mode": "Default",
@@ -678,23 +678,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\BBSforum\\forum\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\forum.bundle.scp.css"
-    },
-    {
-      "Identity": "D:\\BBSforum\\forum\\wwwroot\\css\\js\\site.js",
-      "SourceId": "forum",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\BBSforum\\forum\\wwwroot\\",
-      "BasePath": "_content/forum",
-      "RelativePath": "css/js/site.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\js\\site.js"
     },
     {
       "Identity": "D:\\BBSforum\\forum\\wwwroot\\css\\site.css",

@@ -4,24 +4,40 @@
     ViewData["Title"] = "Create";
 }
 
+    <!-- Heading for creating a new post -->
     <h1>Create new post</h1>
     <div class="row">
         <div class="col-md-4">
+            <!-- Form for creating a new post -->
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                
+                <!-- Input field for post title -->
                 <div class="form-group">
                     <label asp-for="title" class="control-label"></label>
                     <input asp-for="title" class="form-control" style="background-color: #acf9ab"/>
                     <span asp-validation-for="title" class="text-danger"></span>
                 </div>
+
+                <!-- Input field for post tag -->
+                <div class="form-group">
+                    <text class="control-label">Tag</text>
+                    <input name="tag" class="form-control" style="background-color: #acf9ab"/>
+                </div>
+
+                <!-- Textarea for post content -->
                 <div class="form-group">
                     <label asp-for="content" class="control-label"></label>
                     <textarea asp-for="content" class="form-control" style="background-color: #acf9ab; height: 200px; width: 400px;"></textarea>
                     <span asp-validation-for="content" class="text-danger"></span>
                 </div>
+
+                <!-- Submit button for creating the post -->
                 <div class="form-group" style="margin-top: 15px; display: inline-block;">
                     <input type="submit" value="Create" class="button" style="border-radius:10px; background-color: #217d18" />
                 </div>
+
+                <!-- Link to navigate back to the home page -->
                 <div style="display: inline-block;">
                     <a asp-action="Index" asp-controller="Home" style="margin-top: 20px; background-color: #de881c; border-radius: 10px; color: black; text-decoration: none;" >&nbsp Back to home &nbsp</a>
                 </div>

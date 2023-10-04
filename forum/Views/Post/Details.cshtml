@@ -4,11 +4,13 @@
     ViewData["Title"] = "Details";
 }
 
+<!-- Heading for displaying post details -->
 <h1>Details</h1>
 
 <div>
     <h4>Post</h4>
     <hr />
+    <!-- Displaying post information in a definition list -->
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.userId)
@@ -37,6 +39,7 @@
     </dl>
 </div>
 <div>
+    <!-- Link to edit the post -->
     <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

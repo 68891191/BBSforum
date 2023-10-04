@@ -16,8 +16,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = d:\BBSforum\forum
 build_property._RazorSourceGeneratorDebug = 
 
+[d:/BBSforum/forum/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [d:/BBSforum/forum/Views/Auth/AccountCreated.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxBY2NvdW50Q3JlYXRlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BBSforum/forum/Views/Auth/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BBSforum/forum/Views/Auth/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BBSforum/forum/Views/Auth/PasswordChanged.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxQYXNzd29yZENoYW5nZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [d:/BBSforum/forum/Views/Auth/SignIn.cshtml]
@@ -36,16 +52,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/BBSforum/forum/Views/Comment/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[d:/BBSforum/forum/Views/Comment/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [d:/BBSforum/forum/Views/Comment/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/BBSforum/forum/Views/Comment/PostComments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxQb3N0Q29tbWVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [d:/BBSforum/forum/Views/Home/Index.cshtml]
@@ -56,24 +68,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleExvZ2dlZEluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/BBSforum/forum/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[d:/BBSforum/forum/Views/Home/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [d:/BBSforum/forum/Views/Message/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[d:/BBSforum/forum/Views/Message/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[d:/BBSforum/forum/Views/Message/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[d:/BBSforum/forum/Views/Message/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [d:/BBSforum/forum/Views/Message/Index.cshtml]
@@ -110,18 +110,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [d:/BBSforum/forum/Views/Tag/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[d:/BBSforum/forum/Views/Tag/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[d:/BBSforum/forum/Views/Tag/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[d:/BBSforum/forum/Views/Tag/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [d:/BBSforum/forum/Views/Tag/Index.cshtml]

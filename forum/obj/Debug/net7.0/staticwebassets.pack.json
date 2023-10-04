@@ -5,10 +5,6 @@
       "PackagePath": "staticwebassets\\forum.bundle.scp.css"
     },
     {
-      "Id": "D:\\BBSforum\\forum\\wwwroot\\css\\js\\site.js",
-      "PackagePath": "staticwebassets\\css\\js\\site.js"
-    },
-    {
       "Id": "D:\\BBSforum\\forum\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

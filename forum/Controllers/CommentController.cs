@@ -19,101 +19,77 @@ namespace forum.Controllers
             _context = context;
         }
 
-        // GET: Comment
-        public async Task<IActionResult> Index()
+        // Retrieves the user asynchronously from the session token
+        private async Task<User?> GetUserAsync()
         {
-              return _context.Comment != null ? 
-                          View(await _context.Comment.ToListAsync()) :
-                          Problem("Entity set 'ForumDbContext.Comment'  is null.");
+            string? token = HttpContext.Session.GetString("token");
+            if (token == null)
+            {
+                return null;
+            }
+            var user = await _context.User.FirstOrDefaultAsync(u => u.token == token);
+            if (user == null)
+            {
+                return null;
+            }
+            return user;
         }
 
-        // GET: Comment/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: Comment/Index
+        public async Task<IActionResult> Index()
         {
-            if (id == null || _context.Comment == null)
+            // Retrieves the user and checks for admin role
+            var user = await GetUserAsync();
+            if (user == null)
             {
-                return NotFound();
+                return RedirectToAction("SignIn", "Auth");
             }
 
-            var comment = await _context.Comment
-                .FirstOrDefaultAsync(m => m.id == id);
-            if (comment == null)
+            string? role = user.role;
+
+            if (role != "admin")
             {
-                return NotFound();
+                return RedirectToAction("SignIn", "Auth");
             }
 
-            return View(comment);
+            // Retrieves comments or reports an error if the Comment entity set is null
+            return _context.Comment != null ?
+                        View(await _context.Comment.ToListAsync()) :
+                        Problem("Entity set 'ForumDbContext.Comment' is null.");
         }
 
         // GET: Comment/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create(int id)
         {
+            // Retrieves the user and postId for creating a comment
+            var user = await GetUserAsync();
+            if (user == null)
+            {
+                return RedirectToAction("SignIn", "Auth");
+            }
+            ViewBag.postId = id;
             return View();
         }
 
         // POST: Comment/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // Binds comment properties and handles comment creation
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,userId,postId,content,createdAt")] Comment comment)
+        public async Task<IActionResult> Create([Bind("postId,content")] Comment comment)
         {
+            // Retrieves the user and postId for creating a comment
+            var user = await GetUserAsync();
+            if (user == null)
+            {
+                return RedirectToAction("SignIn", "Auth");
+            }
+            var postId = comment.postId;
+            comment.userId = user.id;
             if (ModelState.IsValid)
             {
                 _context.Add(comment);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(comment);
-        }
-
-        // GET: Comment/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.Comment == null)
-            {
-                return NotFound();
-            }
-
-            var comment = await _context.Comment.FindAsync(id);
-            if (comment == null)
-            {
-                return NotFound();
-            }
-            return View(comment);
-        }
-
-        // POST: Comment/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,userId,postId,content,createdAt")] Comment comment)
-        {
-            if (id != comment.id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(comment);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CommentExists(comment.id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("PostComments", "Comment", new { id = postId });
             }
             return View(comment);
         }
@@ -121,16 +97,24 @@ namespace forum.Controllers
         // GET: Comment/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            // Checks for comment existence and user authorization
             if (id == null || _context.Comment == null)
             {
                 return NotFound();
             }
+
+            var user = await GetUserAsync();
 
             var comment = await _context.Comment
                 .FirstOrDefaultAsync(m => m.id == id);
             if (comment == null)
             {
                 return NotFound();
+            }
+
+            if (user == null || user.role != "admin" && user.id != comment.userId)
+            {
+                return RedirectToAction("SignIn", "Auth");
             }
 
             return View(comment);
@@ -141,23 +125,49 @@ namespace forum.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            // Handles comment deletion with user authorization
             if (_context.Comment == null)
             {
-                return Problem("Entity set 'ForumDbContext.Comment'  is null.");
+                return Problem("Entity set 'ForumDbContext.Comment' is null.");
             }
             var comment = await _context.Comment.FindAsync(id);
+
+            var user = await GetUserAsync();
+
             if (comment != null)
             {
+                if (user == null || user.role != "admin" && user.id != comment.userId)
+                {
+                    return RedirectToAction("SignIn", "Auth");
+                }
                 _context.Comment.Remove(comment);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
+        // Checks if a comment with the specified ID exists
         private bool CommentExists(int id)
         {
-          return (_context.Comment?.Any(e => e.id == id)).GetValueOrDefault();
+            return (_context.Comment?.Any(e => e.id == id)).GetValueOrDefault();
+        }
+
+        // GET: Comment/PostComments
+        public async Task<IActionResult> PostComments(int id)
+        {
+            // Retrieves user, comments, and the associated post
+            var user = await GetUserAsync();
+            if (user == null)
+            {
+                return RedirectToAction("SignIn", "Auth");
+            }
+
+            var comments = _context.Comment.Where(c => c.postId == id).ToList().OrderByDescending(p => p.createdAt);
+            var post = _context.Post.Where(p => p.id == id).ToList()[0];
+            ViewBag.comments = comments;
+            ViewBag.post = post;
+            return View();
         }
     }
 }

@@ -1,12 +1,10 @@
 {
-    "sqltools.useNodeRuntime": true,
     "sqltools.connections": [
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "database": "${workspaceFolder:BBSforum}/forum/Forum.Data.db",
-            "name": "DbSet"
+            "name": "Db",
+            "database": "${workspaceFolder:BBSforum}/forum/Forum.Data.db"
         }
-    ],
-    "dotnet.defaultSolution": "forum/forum.sln"
+    ]
 }
