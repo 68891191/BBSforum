@@ -103,52 +103,52 @@ BBSforum
 ### the introduction of structure
 BBSforum (Root Directory):
 
-This is the root directory of your project.
+This is the root directory of project.
 ## .git:
-This directory contains the version control information for your project, most likely managed with Git.
+This directory contains the version control information for project, most likely managed with Git.
 
 ## .gitignore:
-It's a configuration file for Git, specifying files and directories that should be ignored when tracking changes in your project.
+It's a configuration file for Git, specifying files and directories that should be ignored when tracking changes in project.
 
 ## DbSet.session.sql:
 This might be a database related file, possibly containing SQL queries or database setup information.
 
 ## forum (Application Directory):
-This is the main application directory where your ASP.NET Core application resides.
+This is the main application directory where  ASP.NET Core application resides.
 ## appsettings.Development.json and appsettings.json:
-These JSON files are used to store configuration settings for your application. They can include database connection strings, API keys, and other settings.
+These JSON files are used to store configuration settings for  application. They can include database connection strings, API keys, and other settings.
 
 ## Controllers:
-This directory contains the controllers for your application. Controllers handle incoming requests, process them, and return responses. Each controller corresponds to a different part of your application's functionality.
+This directory contains the controllers for application. Controllers handle incoming requests, process them, and return responses. Each controller corresponds to a different part of application's functionality.
 
 ## Data:
 This directory typically contains the database context class and other database-related configuration.
 
 ## forum.csproj:
-This is the project file for your ASP.NET Core application. It contains metadata about your project and its dependencies.
+This is the project file for ASP.NET Core application. It contains metadata about  project and its dependencies.
 
 ## Forum.Data.db, Forum.Data.db-shm, and Forum.Data.db-wal:
-These files might be related to a SQLite database used by your application.
+These files might be related to a SQLite database used by application.
 
 ## Migrations:
-This directory is related to Entity Framework Migrations and contains database migration scripts that enable you to evolve your database schema over time.
+This directory is related to Entity Framework Migrations and contains database migration scripts that enable you to evolve database schema over time.
 
 ## Models:
-This directory contains the model classes for your application. Models represent the data structures used in your application.
+This directory contains the model classes for application. Models represent the data structures used in application.
 
 ## Program.cs:
-This is the entry point for your application. It contains the Main method and is responsible for setting up and configuring the web host.
+This is the entry point for application. It contains the Main method and is responsible for setting up and configuring the web host.
 
 ## Properties:
 This directory may contain project properties and configurations.
 
 ## Views:
-This directory contains the Razor views for your application. Razor is the templating engine used in ASP.NET Core for generating HTML.
+This directory contains the Razor views for application. Razor is the templating engine used in ASP.NET Core for generating HTML.
 
 ## wwwroot:
 This is the web root directory where you place static files like CSS, JavaScript, and images that can be served directly to clients.
 
 ## lib:
-This directory appears to contain external libraries or packages used by your project, such as Bootstrap, jQuery, and jQuery-validation.
+This directory appears to contain external libraries or packages used by project, such as Bootstrap, jQuery, and jQuery-validation.
 
 
