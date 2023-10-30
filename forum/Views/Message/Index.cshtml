@@ -7,12 +7,9 @@
 <h1>Messages</h1>
 
     <p>
-        <!-- Button to create a new message -->
         <button style="background-color: #de881c; border-radius: 10px; margin-top: 20px;">
             <a style="color: black; text-decoration: none;" asp-action="Create">Create new message</a>
         </button><br/><br/>
-        
-        <!-- Button to navigate back to the home page -->
         <button style="background-color: #de881c; border-radius: 10px;">
             <a asp-controller="Home" asp-action="Index" style="text-decoration: none; color: black;">Back to home</a>
         </button>
@@ -20,7 +17,6 @@
     <hr/>
     
     <h2>Received</h2>
-    <!-- Display received messages -->
     <ul style="list-style-type: none;">
     @foreach (var message in ViewBag.recievedMessages)
     {
@@ -42,9 +38,7 @@
         </li>
     }
     </ul>
-
     <h2>Sent</h2>
-    <!-- Display sent messages -->
     <ul style="list-style-type: none;">
         @foreach (var message in ViewBag.sentMessages)
         {
